@@ -9,80 +9,15 @@
 #include "Cube.hpp"
 #include "Shader.hpp"
 #include "Renderer.hpp"
+#include "Game.hpp"
 
 constexpr float screenWidth = 1200;
 constexpr float screenHeight = 800;
 
+
 int main() {
-    GLFWwindow* window;
+    Game* game = new Game(screenWidth, screenHeight);
+    game->Update(3.0f);
 
-    if(!glfwInit()){
-        return -1;
-    }
-
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    window = glfwCreateWindow(screenWidth, screenHeight, "Snake", NULL, NULL);
-
-    if(!window){
-        glfwTerminate();
-        return -1;
-
-    }
-    glfwMakeContextCurrent(window);
-
-    if(glewInit() != GLEW_OK){
-        std::cerr << "Error\n";
-    }
-    glfwSwapInterval(1);
-
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    //--------------------------------------------------------------------
-    Shader shader("../shaders/vertex.shader", "../shaders/fragment.shader");
-    Renderer* renderer = new Renderer(shader, Cube::vertices_);
-
-//    glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
-//    glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f);
-//    glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
-
-    glm::vec3 position = glm::vec3(300.0f, 200.0f, 0.0f);
-    glm::vec3 size = glm::vec3(100.0f, 100.0f, 100.0f);
-    glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
-
-    std::vector<Cube*> cubes;
-    cubes.push_back(new Cube(position, size, color));
-    cubes.push_back(new Cube(position * 2.0f, size / 2.0f, color / 10.0f));
-
-    glm::mat4 view(1.0f);
-    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -20.0f));
-    view = glm::rotate(view, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-    glm::mat4 proj = glm::perspective(glm::radians(45.0f), 1200.0f / 800.0f, 0.1f, 100.0f);
-    proj = glm::ortho(0.0f, 1200.0f, 0.0f, 800.0f, -1000.0f, 1000.0f);
-
-    shader.Use();
-    shader.setMat4f("uView", view);
-    shader.setMat4f("uProj", proj);
-
-    while(!glfwWindowShouldClose(window)){
-        glClearColor(0.0, 0.0, 0.0, 0.0);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-            glfwSetWindowShouldClose(window, true);
-
-        for(const auto& cube : cubes){
-            cube->draw(*renderer);
-            cube->move();
-        }
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
-
-    delete renderer;
-    //delete cube;
-    glfwTerminate();
     return 0;
 }

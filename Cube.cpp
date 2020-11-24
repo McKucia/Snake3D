@@ -58,17 +58,17 @@ void Cube::draw(Renderer& renderer){
     renderer.draw(position_, size_, color_);
 }
 
-void Cube::move(){
-    if(direction_ == DIRECTION::UP){
+void Cube::move(DIRECTION direction){
+    if(direction == DIRECTION::UP){
         position_.y += speed_;
     }
-    if(direction_ == DIRECTION::DOWN){
+    if(direction == DIRECTION::DOWN){
         position_.y -= speed_;
     }
-    if(direction_ == DIRECTION::LEFT){
+    if(direction == DIRECTION::LEFT){
         position_.x -= speed_;
     }
-    if(direction_ == DIRECTION::RIGHT){
+    if(direction == DIRECTION::RIGHT){
         position_.x += speed_;
     }
 }

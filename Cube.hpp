@@ -11,7 +11,7 @@ class Cube{
 public:
     Cube(glm::vec3 position, glm::vec3 size, glm::vec3 color);
     void draw(Renderer& renderer);
-    void move();
+    void move(DIRECTION direction);
 
     static std::vector<float> vertices_;
 

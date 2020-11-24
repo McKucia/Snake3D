@@ -6,15 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/dell/CLionProjects/Snake3D/Cube.cpp
-Cube.hpp
-/home/dell/CLionProjects/Snake3D/Cube.hpp
-
 /home/dell/CLionProjects/Snake3D/Cube.hpp
 Renderer.hpp
 /home/dell/CLionProjects/Snake3D/Renderer.hpp
 vector
 /home/dell/CLionProjects/Snake3D/vector
+
+/home/dell/CLionProjects/Snake3D/Game.cpp
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+iostream
+-
+Game.hpp
+/home/dell/CLionProjects/Snake3D/Game.hpp
+Renderer.hpp
+/home/dell/CLionProjects/Snake3D/Renderer.hpp
+Cube.hpp
+/home/dell/CLionProjects/Snake3D/Cube.hpp
+
+/home/dell/CLionProjects/Snake3D/Game.hpp
 
 /home/dell/CLionProjects/Snake3D/Renderer.hpp
 vector

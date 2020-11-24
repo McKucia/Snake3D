@@ -170,6 +170,33 @@ Cube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Cube.cpp.s
 .PHONY : Cube.cpp.s
 
+Game.o: Game.cpp.o
+
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 Renderer.o: Renderer.cpp.o
 
 .PHONY : Renderer.o
@@ -263,6 +290,9 @@ help:
 	@echo "... Cube.o"
 	@echo "... Cube.i"
 	@echo "... Cube.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
 	@echo "... Renderer.o"
 	@echo "... Renderer.i"
 	@echo "... Renderer.s"
