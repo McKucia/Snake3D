@@ -43,6 +43,10 @@ int main() {
     Shader shader("../shaders/vertex.shader", "../shaders/fragment.shader");
     Renderer* renderer = new Renderer(shader, Cube::vertices_);
 
+//    glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
+//    glm::vec3 size = glm::vec3(1.0f, 1.0f, 1.0f);
+//    glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
+
     glm::vec3 position = glm::vec3(300.0f, 200.0f, 0.0f);
     glm::vec3 size = glm::vec3(100.0f, 100.0f, 100.0f);
     glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
@@ -50,7 +54,16 @@ int main() {
     std::vector<Cube*> cubes;
     cubes.push_back(new Cube(position, size, color));
     cubes.push_back(new Cube(position * 2.0f, size / 2.0f, color / 10.0f));
-    //Cube* cube = new Cube(position, size, color);
+
+    glm::mat4 view(1.0f);
+    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -20.0f));
+    view = glm::rotate(view, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+    glm::mat4 proj = glm::perspective(glm::radians(45.0f), 1200.0f / 800.0f, 0.1f, 100.0f);
+    proj = glm::ortho(0.0f, 1200.0f, 0.0f, 800.0f, -1000.0f, 1000.0f);
+
+    shader.Use();
+    shader.setMat4f("uView", view);
+    shader.setMat4f("uProj", proj);
 
     while(!glfwWindowShouldClose(window)){
         glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -61,8 +74,8 @@ int main() {
 
         for(const auto& cube : cubes){
             cube->draw(*renderer);
+            cube->move();
         }
-        //cube->draw(*renderer);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

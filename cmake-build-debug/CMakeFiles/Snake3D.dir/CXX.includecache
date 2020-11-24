@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/dell/CLionProjects/Snake3D/Cube.cpp
+Cube.hpp
+/home/dell/CLionProjects/Snake3D/Cube.hpp
+
 /home/dell/CLionProjects/Snake3D/Cube.hpp
 Renderer.hpp
 /home/dell/CLionProjects/Snake3D/Renderer.hpp
@@ -1117,22 +1121,4 @@ detail/setup.hpp
 /home/dell/CLionProjects/Snake3D/glm/glm/detail/setup.hpp
 detail/func_vector_relational.inl
 /home/dell/CLionProjects/Snake3D/glm/glm/detail/func_vector_relational.inl
-
-/home/dell/CLionProjects/Snake3D/main.cpp
-iostream
--
-GL/glew.h
--
-GLFW/glfw3.h
--
-glm/glm/glm.hpp
-/home/dell/CLionProjects/Snake3D/glm/glm/glm.hpp
-glm/glm/gtc/matrix_transform.hpp
-/home/dell/CLionProjects/Snake3D/glm/glm/gtc/matrix_transform.hpp
-Cube.hpp
-/home/dell/CLionProjects/Snake3D/Cube.hpp
-Shader.hpp
-/home/dell/CLionProjects/Snake3D/Shader.hpp
-Renderer.hpp
-/home/dell/CLionProjects/Snake3D/Renderer.hpp
 
