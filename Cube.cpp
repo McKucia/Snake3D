@@ -1,4 +1,5 @@
 #include "Cube.hpp"
+#include <iostream>
 
 std::vector<float> Cube::vertices_ = {
         //back
@@ -50,25 +51,33 @@ std::vector<float> Cube::vertices_ = {
         -0.5f,  0.5f, -0.5f,
 };
 
-Cube::Cube(glm::vec3 position, glm::vec3 size, glm::vec3 color)
+Cube::Cube(glm::vec3 position, glm::vec3 size, glm::vec3 color, DIRECTION direction)
     : position_(position), size_(size), color_(color),
-    direction_(DIRECTION::UP), speed_(1.0f) {}
+    direction_(direction), speed_(2.0f), canChangeDir_(true) {}
 
 void Cube::draw(Renderer& renderer){
     renderer.draw(position_, size_, color_);
 }
 
-void Cube::move(DIRECTION direction){
-    if(direction == DIRECTION::UP){
+void Cube::move(){
+    if(direction_ == DIRECTION::UP){
         position_.y += speed_;
     }
-    if(direction == DIRECTION::DOWN){
+    if(direction_ == DIRECTION::DOWN){
         position_.y -= speed_;
     }
-    if(direction == DIRECTION::LEFT){
+    if(direction_ == DIRECTION::LEFT){
         position_.x -= speed_;
     }
-    if(direction == DIRECTION::RIGHT){
+    if(direction_ == DIRECTION::RIGHT){
         position_.x += speed_;
+    }
+
+    if(static_cast<int>(position_.x) % static_cast<int>(size_.x) == 0
+       && static_cast<int>(position_.y) % static_cast<int>(size_.y) == 0){
+        canChangeDir_ = true;
+    }
+    else{
+        canChangeDir_ = false;
     }
 }

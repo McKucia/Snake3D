@@ -143,6 +143,33 @@ Snake3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/build
 .PHONY : Snake3D/fast
 
+Board.o: Board.cpp.o
+
+.PHONY : Board.o
+
+# target to build an object file
+Board.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Board.cpp.o
+.PHONY : Board.cpp.o
+
+Board.i: Board.cpp.i
+
+.PHONY : Board.i
+
+# target to preprocess a source file
+Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Board.cpp.i
+.PHONY : Board.cpp.i
+
+Board.s: Board.cpp.s
+
+.PHONY : Board.s
+
+# target to generate assembly for a file
+Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Board.cpp.s
+.PHONY : Board.cpp.s
+
 Cube.o: Cube.cpp.o
 
 .PHONY : Cube.o
@@ -251,6 +278,33 @@ Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
 
+Snake.o: Snake.cpp.o
+
+.PHONY : Snake.o
+
+# target to build an object file
+Snake.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Snake.cpp.o
+.PHONY : Snake.cpp.o
+
+Snake.i: Snake.cpp.i
+
+.PHONY : Snake.i
+
+# target to preprocess a source file
+Snake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Snake.cpp.i
+.PHONY : Snake.cpp.i
+
+Snake.s: Snake.cpp.s
+
+.PHONY : Snake.s
+
+# target to generate assembly for a file
+Snake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake3D.dir/build.make CMakeFiles/Snake3D.dir/Snake.cpp.s
+.PHONY : Snake.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -287,6 +341,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Snake3D"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
 	@echo "... Cube.o"
 	@echo "... Cube.i"
 	@echo "... Cube.s"
@@ -299,6 +356,9 @@ help:
 	@echo "... Shader.o"
 	@echo "... Shader.i"
 	@echo "... Shader.s"
+	@echo "... Snake.o"
+	@echo "... Snake.i"
+	@echo "... Snake.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

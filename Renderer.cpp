@@ -19,6 +19,7 @@ void Renderer::draw(glm::vec3 position, glm::vec3 size, glm::vec3 color) {
     model = glm::translate(model, position);
     model = glm::scale(model, size);
 
+    shader_.setVec3f("uColor", color);
     shader_.setMat4f("uModel", model);
 
     glBindVertexArray(VAO_);

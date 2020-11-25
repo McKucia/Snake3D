@@ -27,6 +27,8 @@ Cube.hpp
 /home/dell/CLionProjects/Snake3D/Cube.hpp
 
 /home/dell/CLionProjects/Snake3D/Game.hpp
+Snake.hpp
+/home/dell/CLionProjects/Snake3D/Snake.hpp
 
 /home/dell/CLionProjects/Snake3D/Renderer.hpp
 vector
@@ -43,6 +45,14 @@ string
 -
 glm/glm/glm.hpp
 /home/dell/CLionProjects/Snake3D/glm/glm/glm.hpp
+
+/home/dell/CLionProjects/Snake3D/Snake.hpp
+Cube.hpp
+/home/dell/CLionProjects/Snake3D/Cube.hpp
+vector
+-
+list
+-
 
 /home/dell/CLionProjects/Snake3D/glm/glm/common.hpp
 detail/qualifier.hpp

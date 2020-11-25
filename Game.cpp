@@ -7,7 +7,6 @@
 #include "Cube.hpp"
 
 Renderer* renderer;
-std::vector<Cube*> cubes;
 GLFWwindow* window;
 
 Game::Game(float width, float height)
@@ -46,15 +45,17 @@ void Game::createWindow() {
     }
     glfwSwapInterval(1);
 
+    glEnable(GL_DEPTH_TEST);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 
 void Game::Init() {
     Shader shader("../shaders/vertex.shader", "../shaders/fragment.shader");
     renderer = new Renderer(shader, Cube::vertices_);
+    snake_ = new Snake(glm::vec3(300.0f, 200.0f, 0.0f), glm::vec3(50.0f, 50.0f, 50.0f));
 
     glm::mat4 view(1.0f);
-    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -20.0f));
+    view = glm::translate(view, glm::vec3(0.0f, 0.0f, -1000.0f));
     view = glm::rotate(view, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
     glm::mat4 proj = glm::perspective(glm::radians(45.0f), 1200.0f / 800.0f, 0.1f, 100.0f);
     proj = glm::ortho(0.0f, 1200.0f, 0.0f, 800.0f, -1000.0f, 1000.0f);
@@ -62,32 +63,38 @@ void Game::Init() {
     shader.Use();
     shader.setMat4f("uView", view);
     shader.setMat4f("uProj", proj);
-
-    glm::vec3 position = glm::vec3(300.0f, 200.0f, 0.0f);
-    glm::vec3 size = glm::vec3(100.0f, 100.0f, 100.0f);
-    glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
-
-    cubes.push_back(new Cube(position, size, color));
-    cubes.push_back(new Cube(position * 2.0f, size / 2.0f, color / 10.0f));
 }
 
+bool pressed = false;
 void Game::ProcessInput() {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    int exit = glfwGetKey(window, GLFW_KEY_ESCAPE);
+    if(exit == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-    
-    if(state_ == GAME_STATE::GAME_ACTIVE){
 
-        if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
-            cubes[0]->move(DIRECTION::UP);
+    if(state_ == GAME_STATE::GAME_ACTIVE){
+        int w = glfwGetKey(window, GLFW_KEY_W);
+        if(w == GLFW_PRESS)
+            snake_->changeDirection(DIRECTION::UP);
+
+        int s = glfwGetKey(window, GLFW_KEY_S);
+        if(s == GLFW_PRESS)
+            snake_->changeDirection(DIRECTION::DOWN);
+
+        int a = glfwGetKey(window, GLFW_KEY_A);
+        if(a == GLFW_PRESS)
+            snake_->changeDirection(DIRECTION::LEFT);
+
+        int d = glfwGetKey(window, GLFW_KEY_D);
+        if(d == GLFW_PRESS)
+            snake_->changeDirection(DIRECTION::RIGHT);
+
+        int space = glfwGetKey(window, GLFW_KEY_SPACE);
+        if(space == GLFW_PRESS && !pressed) {
+            snake_->addCube();
+            pressed = true;
         }
-        if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS){
-            cubes[0]->move(DIRECTION::DOWN);
-        }
-        if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS){
-            cubes[0]->move(DIRECTION::LEFT);
-        }
-        if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS){
-            cubes[0]->move(DIRECTION::RIGHT);
+        if(space == GLFW_RELEASE){
+            pressed = false;
         }
     }
 }
@@ -98,10 +105,9 @@ void Game::Update(float dt) {
         glClearColor(0.0, 0.0, 0.0, 0.0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        for(const auto& cube : cubes){
-            cube->draw(*renderer);
-        }
         ProcessInput();
+        snake_->draw(*renderer);
+        snake_->move();
 
         glfwSwapBuffers(window);
         glfwPollEvents();

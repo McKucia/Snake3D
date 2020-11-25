@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Board.cpp">
+			<Option target="Snake3D"/>
+		</Unit>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Board.hpp">
+			<Option target="Snake3D"/>
+		</Unit>
 		<Unit filename="/home/dell/CLionProjects/Snake3D/Cube.cpp">
 			<Option target="Snake3D"/>
 		</Unit>
@@ -104,6 +110,12 @@
 			<Option target="Snake3D"/>
 		</Unit>
 		<Unit filename="/home/dell/CLionProjects/Snake3D/Shader.hpp">
+			<Option target="Snake3D"/>
+		</Unit>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Snake.cpp">
+			<Option target="Snake3D"/>
+		</Unit>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Snake.hpp">
 			<Option target="Snake3D"/>
 		</Unit>
 		<Unit filename="/home/dell/CLionProjects/Snake3D/main.cpp">
