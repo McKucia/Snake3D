@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Snake3D.dir/Board.cpp.o"
   "CMakeFiles/Snake3D.dir/Cube.cpp.o"
+  "CMakeFiles/Snake3D.dir/Food.cpp.o"
   "CMakeFiles/Snake3D.dir/Game.cpp.o"
   "CMakeFiles/Snake3D.dir/Renderer.cpp.o"
   "CMakeFiles/Snake3D.dir/Shader.cpp.o"

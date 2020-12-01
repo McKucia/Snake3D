@@ -12,6 +12,7 @@ public:
     void draw(Renderer& renderer);
     void changeDirection(DIRECTION direction);
     void addCube();
+    void checkCollision(Cube* other);
 
 private:
     std::vector<Cube*> cubes_;

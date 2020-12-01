@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/dell/CLionProjects/Snake3D/Board.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Board.cpp.o"
   "/home/dell/CLionProjects/Snake3D/Cube.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Cube.cpp.o"
+  "/home/dell/CLionProjects/Snake3D/Food.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Food.cpp.o"
   "/home/dell/CLionProjects/Snake3D/Game.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Game.cpp.o"
   "/home/dell/CLionProjects/Snake3D/Renderer.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Renderer.cpp.o"
   "/home/dell/CLionProjects/Snake3D/Shader.cpp" "/home/dell/CLionProjects/Snake3D/cmake-build-debug/CMakeFiles/Snake3D.dir/Shader.cpp.o"

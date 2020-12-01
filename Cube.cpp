@@ -53,7 +53,7 @@ std::vector<float> Cube::vertices_ = {
 
 Cube::Cube(glm::vec3 position, glm::vec3 size, glm::vec3 color, DIRECTION direction)
     : position_(position), size_(size), color_(color),
-    direction_(direction), speed_(2.0f), canChangeDir_(true) {}
+    direction_(direction), speed_(5.0f), canChangeDir_(true) {}
 
 void Cube::draw(Renderer& renderer){
     renderer.draw(position_, size_, color_);

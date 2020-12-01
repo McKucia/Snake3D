@@ -12,24 +12,6 @@ Renderer.hpp
 vector
 /home/dell/CLionProjects/Snake3D/vector
 
-/home/dell/CLionProjects/Snake3D/Game.cpp
-GL/glew.h
--
-GLFW/glfw3.h
--
-iostream
--
-Game.hpp
-/home/dell/CLionProjects/Snake3D/Game.hpp
-Renderer.hpp
-/home/dell/CLionProjects/Snake3D/Renderer.hpp
-Cube.hpp
-/home/dell/CLionProjects/Snake3D/Cube.hpp
-
-/home/dell/CLionProjects/Snake3D/Game.hpp
-Snake.hpp
-/home/dell/CLionProjects/Snake3D/Snake.hpp
-
 /home/dell/CLionProjects/Snake3D/Renderer.hpp
 vector
 -
@@ -45,6 +27,14 @@ string
 -
 glm/glm/glm.hpp
 /home/dell/CLionProjects/Snake3D/glm/glm/glm.hpp
+
+/home/dell/CLionProjects/Snake3D/Snake.cpp
+Snake.hpp
+/home/dell/CLionProjects/Snake3D/Snake.hpp
+iostream
+-
+algorithm
+-
 
 /home/dell/CLionProjects/Snake3D/Snake.hpp
 Cube.hpp

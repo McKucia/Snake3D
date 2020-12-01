@@ -94,6 +94,12 @@
 		<Unit filename="/home/dell/CLionProjects/Snake3D/Cube.hpp">
 			<Option target="Snake3D"/>
 		</Unit>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Food.cpp">
+			<Option target="Snake3D"/>
+		</Unit>
+		<Unit filename="/home/dell/CLionProjects/Snake3D/Food.hpp">
+			<Option target="Snake3D"/>
+		</Unit>
 		<Unit filename="/home/dell/CLionProjects/Snake3D/Game.cpp">
 			<Option target="Snake3D"/>
 		</Unit>
