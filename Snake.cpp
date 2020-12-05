@@ -26,13 +26,12 @@ void Snake::move(){
             cubes_[0]->direction_ = nextDirection_;
             curvePos_.push_back(cubes_[0]->position_);
         }
-        std::cout << cubes_[0]->position_.x << " " << cubes_[0]->position_.x << '\n';
     }
 
     int i = 0;
     for(auto& cube : cubes_){
         cube->move();
-        if(cube == cubes_.front()){
+        if(cube == cubes_.front()) {
             continue;
         }
 
@@ -49,6 +48,9 @@ void Snake::move(){
                 }
                 if(cubes_[i]->position_.y < cube->position_.y){
                     cube->direction_ = DIRECTION::DOWN;
+                }
+                if(cube == cubes_.back() && curve == curvePos_.front()){
+                    curvePos_.erase(curvePos_.begin());
                 }
                 break;
             }
